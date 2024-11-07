@@ -5,6 +5,13 @@ Sumário:
 - [Configuração de conexão das sources](#configuração-de-conexão-das-sources)
 - [Configuração de conexão dos targets](#configuração-de-conexão-dos-targets)
 - [Estrutura do Mapeamento](#estrutura-do-mapeamento)
+  - [join_pedido_cliente](#join_pedido_cliente)
+  - [join_pedido_cliente_endereco](#join_pedido_cliente_endereco)
+  - [exp_calcula_idade](#exp_calcula_idade)
+  - [filtro_idade_18_65 e tabela clientes_18_a_65](#filtro_idade_18_65-e-tabela-clientes_18_a_65)
+  - [filtro_idade_acima_65 e tabela clientes_acima_65](#filtro_idade_acima_65-e-tabela-clientes_acima_65)
+  - [tabela dim_pedido_cliente_endereco](#tabela-dim_pedido_cliente_endereco)
+  - [Melhorias](#melhorias)
 
 ## Configuração de conexão das sources
 Os arquivos clientes.csv, pedidos.csv e enderecos.csv foram alocados em uma instância da AWS S3 e seus dados foram carregados para o mapeamento conforme figuras abaixo.
