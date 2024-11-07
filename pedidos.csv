@@ -1,0 +1,6 @@
+id_pedido,id_cliente,data_pedido,valor,status_pedido,forma_pagamento,data_envio,data_entrega
+101,1,2023-01-10,150.00,Entregue,Cartão de Crédito,2023-01-12,2023-01-15
+102,2,2023-02-18,250.00,Cancelado,Boleto Bancário,2023-02-19,NULL
+103,3,2023-03-25,320.50,Em trânsito,Pix,2023-03-26,NULL
+104,4,2023-04-05,85.75,Entregue,Cartão de Crédito,2023-04-07,2023-04-10
+105,5,2023-05-12,600.00,Entregue,Boleto Bancário,2023-05-14,2023-05-18

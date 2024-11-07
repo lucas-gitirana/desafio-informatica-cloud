@@ -1,0 +1,7 @@
+"id_pedido","id_cliente","nome","email","telefone","data_nascimento","sexo","data_cadastro","idade","data_pedido","valor","status_pedido","forma_pagamento","data_envio","data_entrega","CEP","tipo_endereco"
+"101","1","Ana Silva","ana.silva@email.com","(11)98765-4321","1985-06-12","F","2020-01-15","39","2023-01-10","150.00","Entregue","Cartão de Crédito","2023-01-12","2023-01-15","01001-000","Entrega"
+"101","1","Ana Silva","ana.silva@email.com","(11)98765-4321","1985-06-12","F","2020-01-15","39","2023-01-10","150.00","Entregue","Cartão de Crédito","2023-01-12","2023-01-15","01001-000","Cobrança"
+"102","2","João Pereira","joao.pereira@email.com","(21)99876-5432","1970-04-22","M","2021-03-10","55","2023-02-18","250.00","Cancelado","Boleto Bancário","2023-02-19","NULL","20020-040","Entrega"
+"103","3","Marcos Oliveira","marcos.oliveira@email.com","(31)91234-5678","1995-11-30","M","2022-07-18","29","2023-03-25","320.50","Em trânsito","Pix","2023-03-26","NULL","30130-000","Entrega"
+"104","4","Clara Souza","clara.souza@email.com","(19)92345-6789","2002-01-25","F","2019-09-01","23","2023-04-05","85.75","Entregue","Cartão de Crédito","2023-04-07","2023-04-10","13040-050","Entrega"
+"105","5","Carlos Mendes","carlos.mendes@email.com","(41)94567-8910","1955-10-05","M","2020-06-08","69","2023-05-12","600.00","Entregue","Boleto Bancário","2023-05-14","2023-05-18","80420-060","Cobrança"

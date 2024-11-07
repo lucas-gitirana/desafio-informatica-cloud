@@ -1,0 +1,7 @@
+id_cliente,CEP,Tipo
+1,01001-000,Entrega
+1,01001-000,Cobrança
+2,20020-040,Entrega
+3,30130-000,Entrega
+4,13040-050,Entrega
+5,80420-060,Cobrança

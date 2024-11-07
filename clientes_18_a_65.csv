@@ -1,0 +1,6 @@
+"id_cliente","nome","email","telefone","data_nascimento","idade","sexo","data_cadastro"
+"1","Ana Silva","ana.silva@email.com","(11)98765-4321","1985-06-12","39","F","2020-01-15"
+"1","Ana Silva","ana.silva@email.com","(11)98765-4321","1985-06-12","39","F","2020-01-15"
+"2","João Pereira","joao.pereira@email.com","(21)99876-5432","1970-04-22","55","M","2021-03-10"
+"3","Marcos Oliveira","marcos.oliveira@email.com","(31)91234-5678","1995-11-30","29","M","2022-07-18"
+"4","Clara Souza","clara.souza@email.com","(19)92345-6789","2002-01-25","23","F","2019-09-01"
