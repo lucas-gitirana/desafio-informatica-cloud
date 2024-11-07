@@ -1,6 +1,11 @@
 # Desafio - Informatica Cloud
 Participante: Lucas Emanoel Gitirana
 
+Sumário:
+- [Configuração de conexão das sources](#configuração-de-conexão-das-sources)
+- [Configuração de conexão dos targets](#configuração-de-conexão-dos-targets)
+- [Estrutura do Mapeamento](#estrutura-do-mapeamento)
+
 ## Configuração de conexão das sources
 Os arquivos clientes.csv, pedidos.csv e enderecos.csv foram alocados em uma instância da AWS S3 e seus dados foram carregados para o mapeamento conforme figuras abaixo.
 
@@ -58,7 +63,6 @@ clientes_acima_65.csv
 "id_cliente","nome","email","telefone","data_nascimento","idade","sexo","data_cadastro"  
 "5","Carlos Mendes","carlos.mendes@email.com","(41)94567-8910","1955-10-05","69","M","2020-06-08"  
 
-
 clientes_18_a_65.csv  
 "id_cliente","nome","email","telefone","data_nascimento","idade","sexo","data_cadastro"  
 "1","Ana Silva","ana.silva@email.com","(11)98765-4321","1985-06-12","39","F","2020-01-15"  
@@ -66,3 +70,18 @@ clientes_18_a_65.csv
 "2","João Pereira","joao.pereira@email.com","(21)99876-5432","1970-04-22","55","M","2021-03-10"  
 "3","Marcos Oliveira","marcos.oliveira@email.com","(31)91234-5678","1995-11-30","29","M","2022-07-18"  
 "4","Clara Souza","clara.souza@email.com","(19)92345-6789","2002-01-25","23","F","2019-09-01"  
+
+## Estrutura do Mapeamento
+A fim de obter os dados para as três tabelas finais, foram adicionados dois joins, uma expressão e dois filtros. Abaixo, seguem os detalhes dos elementos utilizados.
+
+### join_pedido_cliente  
+Realiza a junção dos dados das tabelas pedido e cliente pelo id do cliente.  
+![image](https://github.com/user-attachments/assets/3e6998b7-3f5f-4efc-a51a-d97a87519fd0)  
+
+### join_pedido_cliente_endereco
+Realiza a junção dos dados resultantes do join_pedido_cliente com os dados da tabela de enderecos pelo id do cliente.  
+![image](https://github.com/user-attachments/assets/ae911f8f-eb9d-47d3-a050-b7127f806950)
+
+Visualização dos joins no mapa:  
+![image](https://github.com/user-attachments/assets/6874bd72-a75b-4bb4-b7d7-41642d6ef17a)
+
