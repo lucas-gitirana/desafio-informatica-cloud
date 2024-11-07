@@ -85,3 +85,41 @@ Realiza a junção dos dados resultantes do join_pedido_cliente com os dados da 
 Visualização dos joins no mapa:  
 ![image](https://github.com/user-attachments/assets/6874bd72-a75b-4bb4-b7d7-41642d6ef17a)
 
+## exp_calcula_idade
+Expressão criada para gerar a coluna que servirá como filtro para as tabelas auxiliares. Por meio dela, os dados de data de nascimento dos clientes são transformados em idade e adicionados aos dados obtidos a partir dos joins anteriores.
+
+Campos recebidos pela expressão:  
+![image](https://github.com/user-attachments/assets/3edf4ae3-f169-4391-a4c6-c09ea01b7ebd)
+
+Expressão:  
+![image](https://github.com/user-attachments/assets/c989fe55-ad0a-4b19-9dc3-530d3d0ec933)
+
+## filtro_idade_18_65 e tabela clientes_18_a_65
+Filtra os registros cujos clientes possuem idade entre 18 e 65 anos e popula a tabela clientes_18_a_65.
+
+Filtro:  
+![image](https://github.com/user-attachments/assets/0b1a1a53-9b7f-403b-905a-0b9e951326eb)
+
+Tabela resultante:  
+![image](https://github.com/user-attachments/assets/2b4b8b3a-b99e-40a4-b978-056be6bc9e80)
+
+## filtro_idade_acima_65 e tabela clientes_acima_65
+Filtra os registros cujos clientes possuem idade acima de 65 anos e popula a tabela clientes_acima_65.
+
+Filtro:  
+![image](https://github.com/user-attachments/assets/2377d3b5-f199-40cc-94fe-786bcfe3e34c)
+
+Tabela resultante:  
+![image](https://github.com/user-attachments/assets/066e3350-9114-4c3d-9675-8a82c0544740)
+
+## tabela dim_pedido_cliente_endereco
+Esta é a tabela principal da integração, pois reúne todos os registros, independentemente da idade. Os dados obtidos a partir dos joins e da expression não são filtrados.
+
+Tabela:  
+![image](https://github.com/user-attachments/assets/2ad4f69c-6207-416a-b9f9-99862233cb1f)
+
+Visualização dos filtros e tabelas finais no mapa:  
+![image](https://github.com/user-attachments/assets/59db5075-22a2-4f0b-bad7-d6af117c1765)
+
+## Melhorias
+A adição de informações aos endereços utilizando a ferramente CAI (Cloud Application Integration) não foi realizada a tempo. Esta funcionalidade é a única restante para a finalização do mapeamento completo.
