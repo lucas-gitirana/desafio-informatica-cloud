@@ -12,6 +12,8 @@ Sumário:
   - [filtro_idade_acima_65 e tabela clientes_acima_65](#filtro_idade_acima_65-e-tabela-clientes_acima_65)
   - [tabela dim_pedido_cliente_endereco](#tabela-dim_pedido_cliente_endereco)
 - [Busca de Endereços](#busca-de-endereços)
+  - [script_busca_dados_enderecos](#script_busca_dados_enderecos)
+  - [script_atualiza_tabela_principal](#script_atualiza_tabela_principal)
 
 ## Configuração de conexão das sources
 Os arquivos clientes.csv, pedidos.csv e enderecos.csv foram alocados em uma instância da AWS S3 e seus dados foram carregados para o mapeamento conforme figuras abaixo.
