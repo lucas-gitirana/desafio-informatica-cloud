@@ -31,7 +31,7 @@ def consultar_cep(cep):
     return {"logradouro": "Não disponível", "bairro": "Não disponível", "cidade": "Não disponível", "estado": "Não disponível"}
 
 # Carregar o arquivo CSV
-enderecos_df = pd.read_csv("copia-enderecos.csv")
+enderecos_df = pd.read_csv("enderecos.csv")
 
 # Adicionando as novas colunas para armazenar os dados do endereço
 enderecos_df["logradouro"] = "Não disponível"
