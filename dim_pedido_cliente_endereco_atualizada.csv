@@ -1,0 +1,9 @@
+id_pedido,id_cliente_x,nome,email,telefone,data_nascimento,sexo,data_cadastro,idade,data_pedido,valor,status_pedido,forma_pagamento,data_envio,data_entrega,tipo_endereco,id_cliente_y,Tipo,logradouro,bairro,cidade,estado
+101,1,Ana Silva,ana.silva@email.com,(11)98765-4321,1985-06-12,F,2020-01-15,39,2023-01-10,150.0,Entregue,Cartão de Crédito,2023-01-12,2023-01-15,Entrega,1,Entrega,Praça da Sé,Sé,São Paulo,SP
+101,1,Ana Silva,ana.silva@email.com,(11)98765-4321,1985-06-12,F,2020-01-15,39,2023-01-10,150.0,Entregue,Cartão de Crédito,2023-01-12,2023-01-15,Entrega,1,Cobrança,Praça da Sé,Sé,São Paulo,SP
+101,1,Ana Silva,ana.silva@email.com,(11)98765-4321,1985-06-12,F,2020-01-15,39,2023-01-10,150.0,Entregue,Cartão de Crédito,2023-01-12,2023-01-15,Cobrança,1,Entrega,Praça da Sé,Sé,São Paulo,SP
+101,1,Ana Silva,ana.silva@email.com,(11)98765-4321,1985-06-12,F,2020-01-15,39,2023-01-10,150.0,Entregue,Cartão de Crédito,2023-01-12,2023-01-15,Cobrança,1,Cobrança,Praça da Sé,Sé,São Paulo,SP
+102,2,João Pereira,joao.pereira@email.com,(21)99876-5432,1970-04-22,M,2021-03-10,55,2023-02-18,250.0,Cancelado,Boleto Bancário,2023-02-19,,Entrega,2,Entrega,Praça Ana Amélia,Centro,Rio de Janeiro,RJ
+103,3,Marcos Oliveira,marcos.oliveira@email.com,(31)91234-5678,1995-11-30,M,2022-07-18,29,2023-03-25,320.5,Em trânsito,Pix,2023-03-26,,Entrega,3,Entrega,Avenida Afonso Pena,Centro,Belo Horizonte,MG
+104,4,Clara Souza,clara.souza@email.com,(19)92345-6789,2002-01-25,F,2019-09-01,23,2023-04-05,85.75,Entregue,Cartão de Crédito,2023-04-07,2023-04-10,Entrega,4,Entrega,Não disponível,Não disponível,Não disponível,Não disponível
+105,5,Carlos Mendes,carlos.mendes@email.com,(41)94567-8910,1955-10-05,M,2020-06-08,69,2023-05-12,600.0,Entregue,Boleto Bancário,2023-05-14,2023-05-18,Cobrança,5,Cobrança,Alameda Dom Pedro II,Batel,Curitiba,PR
