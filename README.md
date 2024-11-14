@@ -11,7 +11,7 @@ Sumário:
   - [filtro_idade_18_65 e tabela clientes_18_a_65](#filtro_idade_18_65-e-tabela-clientes_18_a_65)
   - [filtro_idade_acima_65 e tabela clientes_acima_65](#filtro_idade_acima_65-e-tabela-clientes_acima_65)
   - [tabela dim_pedido_cliente_endereco](#tabela-dim_pedido_cliente_endereco)
-  - [Melhorias](#melhorias)
+- [Busca de Endereços](#busca-de-endereços)
 
 ## Configuração de conexão das sources
 Os arquivos clientes.csv, pedidos.csv e enderecos.csv foram alocados em uma instância da AWS S3 e seus dados foram carregados para o mapeamento conforme figuras abaixo.
@@ -128,5 +128,39 @@ Tabela:
 Visualização dos filtros e tabelas finais no mapa:  
 ![image](https://github.com/user-attachments/assets/59db5075-22a2-4f0b-bad7-d6af117c1765)
 
-## Melhorias
-A adição de informações aos endereços utilizando a ferramente CAI (Cloud Application Integration) não foi realizada a tempo. Esta funcionalidade é a única restante para a finalização do mapeamento completo.
+## Busca de Endereços
+A fim de complementar os endereços dos clientes com dados de logradouro, bairro, cidade e estado, foram desenvolvidos dois scripts em Python, responsáveis por carregar os dados completos de endereço da BrasilAPI com base no CEP e atualizar a tabela dim_pedido_cliente_endereco com as novas informações obtidas. A seguir, segue uma breve explicação sobre cada algoritmo.
+
+## script_busca_dados_enderecos
+Carrega os dados adicionais dos endereços a partir dos seguintes passos:
+1. Cria um dataframe com base nas colunas do arquivo "endereco.csv" somadas às colunas de logradouro, bairro, cidade e estado  
+2. Percorre cada linha do arquivo "enderecos.csv"  
+3. Carrega os dados do endereço da BrasilAPI utilizando o CEP
+4. Ao final, cria um novo arquivo com os endereços completos
+
+Resultado:  
+id_cliente,CEP,Tipo,logradouro,bairro,cidade,estado  
+1,01001-000,Entrega,Praça da Sé,Sé,São Paulo,SP  
+1,01001-000,Cobrança,Praça da Sé,Sé,São Paulo,SP  
+2,20020-040,Entrega,Praça Ana Amélia,Centro,Rio de Janeiro,RJ  
+3,30130-000,Entrega,Avenida Afonso Pena,Centro,Belo Horizonte,MG  
+4,13040-050,Entrega,Não disponível,Não disponível,Não disponível,Não disponível  
+5,80420-060,Cobrança,Alameda Dom Pedro II,Batel,Curitiba,PR  
+
+## script_atualiza_tabela_principal
+Atualiza os dados da tabela dim_pedido_cliente_endereco com os endereços completos a partir dos seguintes passos:
+1. Carrega os arquivos dim_pedido_cliente_endereco.csv e enderecos_atualizados.csv
+2. Trata os valores e une os dados dos dois arquivos utilizando o CEP
+3. Cria um novo arquivo "clone" com os dados atualizados
+
+Resultado:  
+id_pedido,id_cliente_x,nome,email,telefone,data_nascimento,sexo,data_cadastro,idade,data_pedido,valor,status_pedido,forma_pagamento,data_envio,data_entrega,tipo_endereco,id_cliente_y,Tipo,logradouro,bairro,cidade,estado
+101,1,Ana Silva,ana.silva@email.com,(11)98765-4321,1985-06-12,F,2020-01-15,39,2023-01-10,150.0,Entregue,Cartão de Crédito,2023-01-12,2023-01-15,Entrega,1,Entrega,Praça da Sé,Sé,São Paulo,SP  
+101,1,Ana Silva,ana.silva@email.com,(11)98765-4321,1985-06-12,F,2020-01-15,39,2023-01-10,150.0,Entregue,Cartão de Crédito,2023-01-12,2023-01-15,Entrega,1,Cobrança,Praça da Sé,Sé,São Paulo,SP  
+101,1,Ana Silva,ana.silva@email.com,(11)98765-4321,1985-06-12,F,2020-01-15,39,2023-01-10,150.0,Entregue,Cartão de Crédito,2023-01-12,2023-01-15,Cobrança,1,Entrega,Praça da Sé,Sé,São Paulo,SP  
+101,1,Ana Silva,ana.silva@email.com,(11)98765-4321,1985-06-12,F,2020-01-15,39,2023-01-10,150.0,Entregue,Cartão de Crédito,2023-01-12,2023-01-15,Cobrança,1,Cobrança,Praça da Sé,Sé,São Paulo,SP  
+102,2,João Pereira,joao.pereira@email.com,(21)99876-5432,1970-04-22,M,2021-03-10,55,2023-02-18,250.0,Cancelado,Boleto Bancário,2023-02-19,,Entrega,2,Entrega,Praça Ana Amélia,Centro,Rio de Janeiro,RJ  
+103,3,Marcos Oliveira,marcos.oliveira@email.com,(31)91234-5678,1995-11-30,M,2022-07-18,29,2023-03-25,320.5,Em trânsito,Pix,2023-03-26,,Entrega,3,Entrega,Avenida Afonso Pena,Centro,Belo Horizonte,MG  
+104,4,Clara Souza,clara.souza@email.com,(19)92345-6789,2002-01-25,F,2019-09-01,23,2023-04-05,85.75,Entregue,Cartão de Crédito,2023-04-07,2023-04-10,Entrega,4,Entrega,Não disponível,Não disponível,Não disponível,Não disponível  
+105,5,Carlos Mendes,carlos.mendes@email.com,(41)94567-8910,1955-10-05,M,2020-06-08,69,2023-05-12,600.0,Entregue,Boleto Bancário,2023-05-14,2023-05-18,Cobrança,5,Cobrança,Alameda Dom Pedro II,Batel,Curitiba,PR  
+
